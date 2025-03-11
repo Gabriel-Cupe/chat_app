@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64913963017",
+    "project_id": "jandy-6a3e0",
+    "storage_bucket": "jandy-6a3e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64913963017:android:3cf4fb373c5e7f85dde0d8",
+        "android_client_info": {
+          "package_name": "com.example.jandy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzYgCxZmoCzw4ST4RNYBqifE1Ifq9bRCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

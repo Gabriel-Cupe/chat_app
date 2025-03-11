@@ -1,0 +1,41 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "jandy-6a3e0",
+          "appId": "1:64913963017:android:3cf4fb373c5e7f85dde0d8",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "jandy-6a3e0",
+          "configurations": {
+            "android": "1:64913963017:android:3cf4fb373c5e7f85dde0d8",
+            "ios": "1:64913963017:ios:ad4a4693c28aecaadde0d8",
+            "macos": "1:64913963017:ios:ad4a4693c28aecaadde0d8",
+            "web": "1:64913963017:web:60a7dc7e706d3b2cdde0d8",
+            "windows": "1:64913963017:web:20091022e51c0951dde0d8"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "dataconnect": {
+      "dataDir": "dataconnect/.dataconnect/pgliteData"
+    }
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  },
+  "hosting": {
+    "public": "./",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

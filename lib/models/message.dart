@@ -3,21 +3,25 @@ class Message {
   final String text;
   final int timestamp;
 
-  Message({required this.sender, required this.text, required this.timestamp});
+  Message({
+    required this.sender,
+    required this.text,
+    required this.timestamp,
+  });
 
-  factory Message.fromJson(Map<String, dynamic> json) {
-    return Message(
-      sender: json['sender'],
-      text: json['text'],
-      timestamp: json['timestamp'],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toMap() {
     return {
       'sender': sender,
       'text': text,
       'timestamp': timestamp,
     };
+  }
+
+  factory Message.fromMap(Map<dynamic, dynamic> map) {
+    return Message(
+      sender: map['sender'],
+      text: map['text'],
+      timestamp: map['timestamp'],
+    );
   }
 }

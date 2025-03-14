@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Para RawKeyboardListener
 import '../services/firebase_service.dart';
 import '../models/message.dart';
 
@@ -32,12 +31,17 @@ class _ChatScreenState extends State<ChatScreen> {
         duration: Duration(milliseconds: 300),
         curve: Curves.easeOut,
       );
+
+      // Mantener el foco en el campo de texto después de enviar el mensaje
+      _focusNode.requestFocus();
     }
   }
 
   @override
   void dispose() {
     _focusNode.dispose(); // Liberar el foco al cerrar la pantalla
+    _messageController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -111,6 +115,13 @@ class _ChatScreenState extends State<ChatScreen> {
                             bottomLeft: Radius.circular(12),
                             bottomRight: Radius.circular(12),
                           ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              blurRadius: 2,
+                              offset: Offset(0, 1),
+                            ),
+                          ],
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,38 +161,31 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: RawKeyboardListener(
-              focusNode: _focusNode,
-              onKey: (event) {
-                if (event is RawKeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
-                  _sendMessage(); // Enviar mensaje al presionar Enter
-                }
-              },
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      controller: _messageController,
-                      decoration: InputDecoration(
-                        hintText: "Escribe un mensaje...",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _messageController,
+                    focusNode: _focusNode, // Asignar el FocusNode al campo de texto
+                    decoration: InputDecoration(
+                      hintText: "Escribe un mensaje...",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      onSubmitted: (value) => _sendMessage(), // Enviar mensaje al presionar Enter en móvil
+                      contentPadding: EdgeInsets.symmetric(horizontal: 16),
                     ),
+                    onSubmitted: (value) => _sendMessage(), // Enviar mensaje al presionar Enter
                   ),
-                  SizedBox(width: 8),
-                  CircleAvatar(
-                    backgroundColor: Colors.blueAccent,
-                    child: IconButton(
-                      icon: Icon(Icons.send, color: Colors.white),
-                      onPressed: _sendMessage,
-                    ),
+                ),
+                SizedBox(width: 8),
+                CircleAvatar(
+                  backgroundColor: Colors.blueAccent,
+                  child: IconButton(
+                    icon: Icon(Icons.send, color: Colors.white),
+                    onPressed: _sendMessage,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

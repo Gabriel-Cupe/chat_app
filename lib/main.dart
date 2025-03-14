@@ -13,6 +13,7 @@ void main() async {
       );
     }
   } catch (e) {
+    // ignore: avoid_print
     print("Firebase ya estaba inicializado: $e");
   }
 
@@ -20,6 +21,7 @@ void main() async {
 }
 
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:Chat/utils/animations.dart';
-import '../data/bg_data.dart';
 import '../utils/text_utils.dart';
 import 'chat_screen.dart'; // Asegúrate de importar la pantalla de chat
 
@@ -22,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final Map<String, String> users = {
     "Gabriel": "1234",
     "Jandy": "kiki",
+    "Bot": "1234",
   };
 
   void _login() {
@@ -71,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(15),
+                    // ignore: deprecated_member_use
                     color: Colors.black.withOpacity(0.1),
                   ),
                   child: ClipRRect(

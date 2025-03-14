@@ -1,4 +1,4 @@
-#Tue Mar 11 05:20:40 PET 2025
+#Thu Mar 13 18:40:38 PET 2025
 base.0=/home/gabriel/Documentos/jandy/jandy/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/gabriel/Documentos/jandy/jandy/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/home/gabriel/Documentos/jandy/jandy/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

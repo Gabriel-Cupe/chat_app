@@ -1,15 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ShowUpAnimation extends StatefulWidget {
   /// GETTING THE CHILD WIDGET
   final Widget child;
   /// GETTING THE ANIMATION DURATION
   int? delay;
 
+  // ignore: use_key_in_widget_constructors
   ShowUpAnimation({required this.child,  this.delay});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ShowUpAnimationState createState() => _ShowUpAnimationState();
 }
 

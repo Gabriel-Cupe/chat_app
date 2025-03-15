@@ -17,11 +17,18 @@ class FirebaseService {
       if (event.snapshot.value != null) {
         final Map<dynamic, dynamic> data = event.snapshot.value as Map<dynamic, dynamic>;
         data.forEach((key, value) {
-          messages.add(Message.fromMap(value));
+          messages.add(Message.fromMap(value)..id = key); // Asignar el ID del mensaje
         });
       }
       messages.sort((a, b) => b.timestamp.compareTo(a.timestamp)); // Ordenar por timestamp
       return messages;
     });
+  }
+
+  // Método para eliminar un mensaje
+  void deleteMessage(Message message) {
+    if (message.id != null) {
+      _databaseRef.child(message.id!).remove(); // Eliminar el mensaje usando su ID
+    }
   }
 }

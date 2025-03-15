@@ -356,6 +356,10 @@
         "source": "com.example.jandy.app-jetified-play-services-base-18.1.0-21:/drawable-xxhdpi-v4/googleg_standard_color_18.png"
     },
     {
+        "merged": "com.example.jandy.app-release-31:/xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "com.example.jandy.app-release-35:/xml/flutter_image_picker_file_paths.xml"
+    },
+    {
         "merged": "com.example.jandy.app-release-31:/drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "com.example.jandy.app-jetified-play-services-base-18.1.0-21:/drawable-hdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
     },

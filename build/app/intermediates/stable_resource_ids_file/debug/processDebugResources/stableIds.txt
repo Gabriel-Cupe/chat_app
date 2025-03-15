@@ -1,3 +1,4 @@
+com.example.jandy:xml/flutter_image_picker_file_paths = 0x7f0f0000
 com.example.jandy:styleable/SplitPlaceholderRule = 0x7f0e000e
 com.example.jandy:styleable/SplitPairRule = 0x7f0e000d
 com.example.jandy:styleable/SplitPairFilter = 0x7f0e000c
